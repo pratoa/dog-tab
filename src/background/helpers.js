@@ -19,7 +19,7 @@ export default async function getImages() {
 function saveImagesToStorage(data) {
     var imagesToStore = [];
     data.forEach(function (image) {
-        var img = new DogImage(image.urls.full, image.user)
+        var img = new DogImage(image.urls.regular, image.user)
         imagesToStore.push(img);
     });
 

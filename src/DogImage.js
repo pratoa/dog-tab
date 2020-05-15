@@ -3,25 +3,28 @@ import React, { Component } from 'react'
 import './DogImage.css'
 
 export default class DogImage extends Component {
+    constructor() {
+        super();
+        this.state = { url: "" };
+    }
+
+    async componentDidMount() {
+        let response = await getBackgroundImage();
+        this.setState({ url: response });
+    }
+
     render() {
         return (
-            <div className="dog-image" style={{backgroundImage: `url(${getBackgroundImage()})`}}></div>
+            <div className="dog-image" style={{backgroundImage: `url(${this.state.url})`}}></div>
         )
     }
 }
 
 async function getBackgroundImage() {
-    var images = [];
-    var url = "";
-    chrome.storage.local.get(['dogImages'], function(result) {
-        images = result.dogImages;
-        console.log(images);
-        console.log(images.length);
-        var randomImg = Math.floor(Math.random() * images.length);
-        console.log(randomImg);
-        console.log(images[randomImg].url);
-        url = images[randomImg].url;
+    return new Promise(function(resolve, reject) {
+        chrome.storage.local.get(['dogImages'], function(result) {
+            var randomImg = Math.floor(Math.random() * result.dogImages.length);
+            resolve(result.dogImages[randomImg].url);
+         })
     });
-
-    return await url;
 }

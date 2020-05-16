@@ -1,0 +1,9 @@
+.custom-select {
+    width: 200px;
+    position: relative;
+    font-family: Arial;
+  }
+
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }

@@ -5,8 +5,8 @@ const unsplash = new Unsplash({
     accessKey: "3Z5nmpj96SkBih-eqsEFI5Cl_L1kiwkZFF6FpPen37E"
 });
 
-export default async function getImages() {
-    unsplash.search.photos("dogs", 1, 30, { orientation: "landscape" })
+export default function getImages() {
+    unsplash.search.photos("dogs", 1, 50, { orientation: "landscape" })
     .then(toJson)
     .then(json => {
         if (json && json.results.length > 0) {

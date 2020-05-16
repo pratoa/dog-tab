@@ -15,7 +15,7 @@ export default class DogImage extends Component {
 
     render() {
         return (
-            <div className="dog-image" style={{backgroundImage: `url(${this.state.url})`}}></div>
+            <section className="dog-image" style={{backgroundImage: `url(${this.state.url})`}}></section>
         )
     }
 }

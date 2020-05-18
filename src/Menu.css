@@ -1,0 +1,52 @@
+.dropdown-menu{
+    height:400px;
+    overflow-y:auto;
+}
+
+.checkbox-menu li label {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    margin:0;
+    transition: background-color .4s ease;
+}
+.checkbox-menu li input {
+    margin: 0px 5px;
+    top: 2px;
+    position: relative;
+}
+
+.checkbox-menu li.active label {
+    background-color: #cbcbff;
+    font-weight:bold;
+}
+
+.checkbox-menu li label:hover,
+.checkbox-menu li label:focus {
+    background-color: #f5f5f5;
+}
+
+.checkbox-menu li.active label:hover,
+.checkbox-menu li.active label:focus {
+    background-color: #b8b8ff;
+}
+
+.current-time {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: black;
+	-webkit-text-fill-color: white; 
+	-webkit-text-stroke: 1px black; 
+}
+
+.current-date {
+    font-size: 10px;
+    display: block;
+    color: black;
+	-webkit-text-fill-color: white; 
+	-webkit-text-stroke: 0.5px black; 
+}

@@ -13,6 +13,9 @@ export default function getImages() {
             console.log(json.results);
             saveImagesToStorage(json.results);
         }
+    })
+    .catch(err => {
+        console.log(err);
     });
 }
 

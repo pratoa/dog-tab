@@ -40,7 +40,7 @@
     font-weight: normal;
     color: black;
 	-webkit-text-fill-color: white; 
-    -webkit-text-stroke: 0.2px black;
+    -webkit-text-stroke: 0.3px black;
     float: right;
 }
 
@@ -49,5 +49,16 @@
     display: block;
     color: black;
 	-webkit-text-fill-color: white; 
-	-webkit-text-stroke: 0.2px black; 
+	-webkit-text-stroke: 0.3px black; 
 }
+
+.navbar-nav > li > .icon {
+	-webkit-text-fill-color: white; 
+    -webkit-text-stroke: 0.3px black; 
+    margin-left: 15px;
+ }
+ .navbar-nav > li > .icon:hover,
+ .navbar-nav > li > .icon:focus {
+    color: #0091c1; 
+    background-color: transparent;
+ }

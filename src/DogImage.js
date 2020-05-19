@@ -6,7 +6,7 @@ import Menu from './Menu'
 export default class DogImage extends Component {
     constructor() {
         super();
-        this.state = { url: "https://images.unsplash.com/photo-1530041686259-53d26f863313?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2206&q=80" };
+        this.state = { url: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEzNDQzNH0" };
     }
 
     // async componentDidMount() {

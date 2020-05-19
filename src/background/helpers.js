@@ -6,7 +6,7 @@ const unsplash = new Unsplash({
 });
 
 export default function getImages() {
-    unsplash.search.photos("dogs", 1, 50, { orientation: "landscape" })
+    unsplash.search.photos("dog", 1, 50, { orientation: "landscape" })
     .then(toJson)
     .then(json => {
         if (json && json.results.length > 0) {

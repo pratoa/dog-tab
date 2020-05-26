@@ -1,6 +1,19 @@
-.dropdown-menu{
+.breeds-dropdown{
     height:400px;
+    
     overflow-y:auto;
+}
+
+.site-dropdown {
+    background-color: rgba(11, 21, 30, 0.74);
+}
+
+.dropdown-header {
+    color: rgba(140, 148, 155, 1);
+}
+
+.site-item {
+    color: rgba(192, 197, 200, 1);
 }
 
 .checkbox-menu li label {

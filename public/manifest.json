@@ -2,7 +2,7 @@
   "name": "DogTab",
   "version": "1.0",
   "description": "You will see a beautiful dog everytime you open a new tab!!",
-  "permissions": ["activeTab", "tabs", "storage", "alarms"],
+  "permissions": ["activeTab", "tabs", "storage", "topSites"],
 
   "chrome_url_overrides" : {
     "newtab": "index.html"

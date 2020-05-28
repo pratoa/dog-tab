@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faDog, faEye } from '@fortawesome/free-solid-svg-icons'
 import './Menu.css'
 
-// var sites = ["Apple", "Orange", "Coconut"];
-
 export default class DogImage extends Component {
 
     constructor() {
@@ -30,17 +28,16 @@ export default class DogImage extends Component {
                         </li>
                         <li className="nav-item dropdown">
                             <FontAwesomeIcon icon={faDog} size="2x" color="white" className="icon dropdown-toggle" role="button" data-toggle="dropdown"/>
-                            <ul className="breeds-dropdown dropdown-menu checkbox-menu allow-focus" aria-labelledby="dropdownMenu1">
+                            <div className="dropdown-menu breeds-dropdown">
+                                <h4 class="dropdown-header">Choose your favorite breeds!</h4>
                                 {
                                     breeds.map(breed =>  
-                                        <li key={breed}>
-                                            <label>
-                                                <input type="checkbox" value={breed} key={breed}/> {breed}
-                                            </label>
-                                        </li>
+                                        <label>
+                                            <input type="checkbox" value={breed} key={breed}/> {breed}
+                                        </label>
                                     )
                                 }
-                            </ul>
+                            </div>
                         </li>
                         <li className="nav-tem dropdown">
                             <FontAwesomeIcon icon={faEye} size="2x" color="white" className="icon" role="button" data-toggle="dropdown"/>

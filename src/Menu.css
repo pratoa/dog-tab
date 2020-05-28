@@ -1,7 +1,7 @@
 .breeds-dropdown{
     height:400px;
-    
     overflow-y:auto;
+    background-color: rgba(11, 21, 30, 0.74);
 }
 
 .site-dropdown {
@@ -20,35 +20,35 @@
     background-color: rgba(90, 146, 196, 0.74);
 }
 
-.checkbox-menu li label {
+.breeds-dropdown label {
     display: block;
     padding: 3px 10px;
     clear: both;
     font-weight: normal;
     line-height: 1.42857143;
-    color: #333;
+    color: rgba(192, 197, 200, 1);;
     white-space: nowrap;
     margin:0;
     transition: background-color .4s ease;
 }
-.checkbox-menu li input {
+.breeds-dropdown input {
     margin: 0px 5px;
     top: 2px;
     position: relative;
 }
 
-.checkbox-menu li.active label {
+.breeds-dropdown .active label {
     background-color: #cbcbff;
     font-weight:bold;
 }
 
-.checkbox-menu li label:hover,
-.checkbox-menu li label:focus {
-    background-color: #f5f5f5;
+.breeds-dropdown label:hover,
+.breeds-dropdown label:focus {
+    background-color: rgba(90, 146, 196, 0.74);;
 }
 
-.checkbox-menu li.active label:hover,
-.checkbox-menu li.active label:focus {
+.breeds-dropdown .active label:hover,
+.breeds-dropdown .active label:focus {
     background-color: #b8b8ff;
 }
 

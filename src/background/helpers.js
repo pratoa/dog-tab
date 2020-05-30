@@ -6,7 +6,7 @@ const unsplash = new Unsplash({
 });
 
 export default function getImages() {
-    unsplash.search.photos("dog", 1, 50, { orientation: "landscape" })
+    unsplash.search.photos("dog", 1, 30, { orientation: "landscape" })
     .then(toJson)
     .then(json => {
         if (json && json.results.length > 0) {
@@ -28,7 +28,11 @@ function saveImagesToStorage(data) {
 
     if (imagesToStore.length > 0) {
         chrome.storage.local.set({'dogImages': imagesToStore}, function() {
-            console.log('Value is set to ' + imagesToStore.toString());
+            console.log('Setting DogImages to: ' + imagesToStore.toString());
+        });
+
+        chrome.storage.local.set({'dogCounter': 0}, function() {
+            console.log('Setting DogCounter for the first time to: ' + 0);
         });
     }
 }

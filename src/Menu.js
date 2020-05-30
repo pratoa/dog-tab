@@ -5,6 +5,8 @@ import breeds from './resources/breeds.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faDog, faEye } from '@fortawesome/free-solid-svg-icons'
 import './Menu.css'
+// import getTopSites from "./background/helpers";
+
 
 export default class DogImage extends Component {
 
@@ -44,8 +46,11 @@ export default class DogImage extends Component {
                             <div className="dropdown-menu site-dropdown">
                                 <h4 class="dropdown-header">Most Visited Sites</h4>
                                 {
-                                   this.state.topSites.map(site => 
-                                        <a className="dropdown-item site-item" value={site.title} key={site.title} href={site.url}> {site.title} </a>
+                                   this.state.topSites.map(site =>
+                                        <div>
+                                            <img src={site.url + "/favicon.ico"} alt="Favorite Icon"/>
+                                            <a className="dropdown-item site-item" value={site.title} key={site.title} href={site.url}> {site.title} </a>
+                                        </div>
                                     )
                                 } 
                             </div>   

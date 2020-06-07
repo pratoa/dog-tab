@@ -41,14 +41,14 @@ export default class DogImage extends Component {
                                 }
                             </div>
                         </li>
-                        <li className="nav-tem dropdown">
+                        <li className="nav-item dropdown">
                             <FontAwesomeIcon icon={faEye} size="2x" color="white" className="icon" role="button" data-toggle="dropdown"/>
                             <div className="dropdown-menu site-dropdown">
                                 <h4 class="dropdown-header">Most Visited Sites</h4>
                                 {
                                    this.state.topSites.map(site =>
-                                        <div>
-                                            <img src={site.url + "/favicon.ico"} alt="Favorite Icon"/>
+                                        <div className="site-container">
+                                            <img src={site.favicon} alt="Favorite Icon" className="site-item-favicon"/>
                                             <a className="dropdown-item site-item" value={site.title} key={site.title} href={site.url}> {site.title} </a>
                                         </div>
                                     )
@@ -74,7 +74,13 @@ async function getTopSites() {
     return new Promise(function(resolve, reject) {
         chrome.topSites.get(function(result) {
             console.log(result);
-            resolve(result);
+            var urls = []
+            result.forEach(function (url) {
+                url.baseUrl = url.url.match(/^https?:\/\/[^#?\/]+/)[0];
+                url.favicon = url.baseUrl + "/favicon.ico";
+                urls.push(url);
+            });
+            resolve(urls);
          })
     });
 }

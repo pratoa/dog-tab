@@ -23,7 +23,7 @@ export default class DogImage extends Component {
     }
 }
 
-export async function getBackgroundImage() {
+async function getBackgroundImage() {
     return new Promise(function(resolve, reject) {
         chrome.storage.local.get(['dogImages', 'dogCounter'], function(result) {
             resolve(result.dogImages[result.dogCounter].url);

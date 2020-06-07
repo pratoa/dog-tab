@@ -17,7 +17,24 @@
 }
 
 .site-item:hover {
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+.site-item-favicon {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;;
+}
+
+.site-container {
+    display: flex;
+    margin: 10px;
+}
+
+.site-container:hover {
     background-color: rgba(90, 146, 196, 0.74);
+    color: whitesmoke;
 }
 
 .breeds-dropdown label {
@@ -44,7 +61,7 @@
 
 .breeds-dropdown label:hover,
 .breeds-dropdown label:focus {
-    background-color: rgba(90, 146, 196, 0.74);;
+    background-color: rgba(90, 146, 196, 0.74);
 }
 
 .breeds-dropdown .active label:hover,

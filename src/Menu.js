@@ -33,7 +33,7 @@ export default class DogImage extends Component {
                             <div className="dropdown-menu breeds-dropdown">
                                 <h4 class="dropdown-header">Choose your favorite breeds!</h4>
                                 {
-                                    breeds.map(breed =>  
+                                    breeds.map(breed =>
                                         <label>
                                             <input type="checkbox" value={breed} key={breed}/> {breed}
                                         </label>
@@ -48,7 +48,7 @@ export default class DogImage extends Component {
                                 {
                                    this.state.topSites.map(site =>
                                         <div className="site-container">
-                                            <img src={site.favicon} alt="Favorite Icon" className="site-item-favicon"/>
+                                            <img src={site.favicon} alt="" className="site-item-favicon"/>
                                             <a className="dropdown-item site-item" value={site.title} key={site.title} href={site.url}> {site.title} </a>
                                         </div>
                                     )

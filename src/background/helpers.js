@@ -21,8 +21,11 @@ function getImages(keyword, page, numberOfPhotos, isCustom) {
 }
 
 async function getInitialImgaes() {
+    chrome.storage.local.set({'savedBreeds': []}, function() {
+        console.log('Setting saveBreeds to: ');
+        console.log("Empty");
+    });
     let shouldGet = await checkDogImages();
-    console.log(shouldGet);
     if (!shouldGet) {
         var first30 = await unsplashSearch("dog", 1, 30);
         var second30 = await unsplashSearch("dog", 2, 30);
@@ -66,7 +69,7 @@ function saveImages(images) {
 async function checkDogImages() {
     return new Promise(function(resolve, reject) { 
             chrome.storage.local.get(["dogImages"], function(result) {
-            resolve(result.hasOwnProperty("dogImages"));
+                resolve(result.hasOwnProperty("dogImages"));
         });
     });
 }

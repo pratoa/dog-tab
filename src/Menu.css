@@ -4,6 +4,24 @@
     background-color: rgba(11, 21, 30, 0.74);
 }
 
+.breeds {
+    height: 80%;
+    overflow-y: auto;
+}
+
+.breeds-save {
+    text-align: center;
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: rgba(192, 197, 200, 1);;
+    white-space: nowrap;
+    margin:0;
+    transition: background-color .4s ease;
+}
+
 .site-dropdown {
     background-color: rgba(11, 21, 30, 0.74);
 }

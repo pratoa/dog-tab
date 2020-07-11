@@ -30,7 +30,7 @@ async function getBackgroundImage() {
 
             if (result.dogCounter !== result.dogImages.length - 1) {
                 chrome.storage.local.set({'dogCounter': result.dogCounter + 1}, function() {
-                    console.log('Setting DogCounter to: ' + result.dogCounter + 1);
+                    console.log('Setting DogCounter to: ' + (result.dogCounter + 1));
                 });
             } else {
                 chrome.storage.local.set({'dogCounter': 0}, function() {

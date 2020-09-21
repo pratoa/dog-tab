@@ -6,18 +6,19 @@ import Menu from './Menu'
 export default class DogImage extends Component {
     constructor() {
         super();
-        this.state = { url: "" };
+        this.state = { currentImage: {} };
     }
 
     async componentDidMount() {
         let response = await getBackgroundImage();
-        this.setState({ url: response });
+        console.log(response);
+        this.setState({ currentImage: response });
     }
 
     render() {
         return (
-            <section className="dog-image" style={{backgroundImage: `url(${this.state.url})`}}>
-                <Menu />
+            <section className="dog-image" style={{backgroundImage: `url(${this.state.currentImage.url})`}}>
+                <Menu currentImage={this.state.currentImage}/>
             </section>
         )
     }
@@ -26,7 +27,7 @@ export default class DogImage extends Component {
 async function getBackgroundImage() {
     return new Promise(function(resolve, reject) {
         chrome.storage.local.get(['dogImages', 'dogCounter'], function(result) {
-            resolve(result.dogImages[result.dogCounter].url);
+            resolve(result.dogImages[result.dogCounter]);
 
             if (result.dogCounter !== result.dogImages.length - 1) {
                 chrome.storage.local.set({'dogCounter': result.dogCounter + 1}, function() {

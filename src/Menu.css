@@ -50,6 +50,19 @@
     margin: 10px;
 }
 
+.settings-dropdown {
+    background-color: rgba(11, 21, 30, 0.74);
+    width: 300px;
+}
+
+.settings-container {
+    margin: 10px;
+}
+
+.photo-by {
+    color: rgba(192, 197, 200, 1);
+}
+
 .site-container:hover {
     background-color: rgba(90, 146, 196, 0.74);
     color: whitesmoke;

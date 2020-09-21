@@ -60,8 +60,16 @@ export default class DogImage extends Component {
             <nav className="navbar navbar-expand-lg">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <FontAwesomeIcon icon={faCog} size="2x" color="white" className="icon"/>
+                        <li className="nav-item dropdown">
+                            <FontAwesomeIcon icon={faCog} size="2x" color="white" className="icon" role="button" data-toggle="dropdown"/>
+                            <div className="dropdown-menu settings-dropdown">
+                                <h4 class="dropdown-header">Settings</h4>
+                                
+                                <div className="dropdown-divider"></div>
+                                <div className="settings-container">
+                                    <p className="photo-by">Photo by <a href={this.props.currentImage.userUrl}>{this.props.currentImage.userName}</a> on <a href="https://unsplash.com/?utm_source=DogTab&utm_medium=referral">Unsplash</a></p>
+                                </div>
+                            </div>
                         </li>
                         <li className="nav-item dropdown">
                             <FontAwesomeIcon icon={faDog} size="2x" color="white" className="icon dropdown-toggle" role="button" data-toggle="dropdown"/>

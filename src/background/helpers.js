@@ -28,6 +28,7 @@ async function getInitialImgaes() {
     let shouldGet = await checkDogImages();
     if (!shouldGet) {
         var first30 = await unsplashSearch("dog", 1, 30);
+        console.log(first30);
         var second30 = await unsplashSearch("dog", 2, 30);
         saveImages(first30.concat(second30));
     }
@@ -51,7 +52,7 @@ async function unsplashSearch(keyword, page, perPage) {
 function saveImages(images) {
     var imagesToStore = [];
     images.forEach(function (image) {
-        var img = new DogImage(image.urls.regular, image.user)
+        var img = new DogImage(image.urls.regular, image.user.name, image.user.links.html)
         imagesToStore.push(img);
     });
 
@@ -75,9 +76,10 @@ async function checkDogImages() {
 }
 
 class DogImage {
-    constructor(url, user) {
+    constructor(url, userName, userUrl) {
         this.url = url;
-        this.user = user;
+        this.userName = userName;
+        this.userUrl = userUrl + '?utm_source=DogTab&utm_medium=referral'
     }
 }
 

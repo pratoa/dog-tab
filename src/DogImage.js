@@ -40,7 +40,7 @@ async function getBackgroundImage() {
                 });
             }
 
-            if (result.views === 20) {
+            if (result.views === 180) {
                 getImages();
             } else {
                 chrome.storage.local.set({'views': result.views + 1}, function() {

@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import './DogImage.css'
 import Menu from './Menu'
+import { getImages } from "./background/helpers.js";
 
 export default class DogImage extends Component {
     constructor() {
@@ -26,7 +27,7 @@ export default class DogImage extends Component {
 
 async function getBackgroundImage() {
     return new Promise(function(resolve, reject) {
-        chrome.storage.local.get(['dogImages', 'dogCounter'], function(result) {
+        chrome.storage.local.get(['dogImages', 'dogCounter', 'views'], function(result) {
             resolve(result.dogImages[result.dogCounter]);
 
             if (result.dogCounter !== result.dogImages.length - 1) {
@@ -36,6 +37,14 @@ async function getBackgroundImage() {
             } else {
                 chrome.storage.local.set({'dogCounter': 0}, function() {
                     console.log('Setting DogCounter to: ' + 0);
+                });
+            }
+
+            if (result.views === 20) {
+                getImages();
+            } else {
+                chrome.storage.local.set({'views': result.views + 1}, function() {
+                    console.log('Setting Views to: ' + (result.views + 1));
                 });
             }
          })

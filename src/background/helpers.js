@@ -5,26 +5,17 @@ const unsplash = new Unsplash({
     accessKey: "3Z5nmpj96SkBih-eqsEFI5Cl_L1kiwkZFF6FpPen37E"
 });
 
-function getImages(keyword, page, numberOfPhotos, isCustom) {
-    unsplash.search.photos(keyword, page, numberOfPhotos, { orientation: "landscape" })
-    .then(toJson)
-    .then(json => {
-        if (json && json.results.length > 0) {
-            console.log(json);
-            console.log(json.results);
-            //save
-        }
-    })
-    .catch(err => {
-        console.log(err);
-    })
+async function getImages() {
+    var first30 = await unsplashSearch("dog", 1, 30);
+    console.log(first30);
+    var second30 = await unsplashSearch("dog", 2, 30);
+    saveImages(first30.concat(second30));
 }
 
 async function getInitialImgaes() {
-    chrome.storage.local.set({'savedBreeds': []}, function() {
-        console.log('Setting saveBreeds to: ');
-        console.log("Empty");
-    });
+    // chrome.storage.local.set({'savedBreeds': []}, function() {
+    //     console.log('Setting saveBreeds to: Empty');
+    // });
     let shouldGet = await checkDogImages();
     if (!shouldGet) {
         var first30 = await unsplashSearch("dog", 1, 30);
@@ -63,6 +54,9 @@ function saveImages(images) {
         });
         chrome.storage.local.set({'dogCounter': 0}, function() {
             console.log('Setting DogCounter for the first time to: ' + 0);
+        });
+        chrome.storage.local.set({'views': 0}, function() {
+            console.log('Setting Views for the first time to: ' + 0);
         });
     }
 }

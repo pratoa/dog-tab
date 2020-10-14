@@ -17,9 +17,9 @@ export default class DogImage extends Component {
 
     render() {
         return (
-            <section className="dog-image" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(${this.state.currentImage.url})`}}>
+            <div className="dog-image" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${this.state.currentImage.url})`}}>
                 <Menu currentImage={this.state.currentImage}/>
-            </section>
+            </div>
         )
     }
 }

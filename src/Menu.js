@@ -13,7 +13,7 @@ export default class DogImage extends Component {
         this.state = { topSites: [],
                        menuBreeds: [],
                        chosenBreeds: [],
-                       timeFormat: "HH:mm A"
+                       timeFormat: "hh:mm A"
                     };
         this.saveBreeds = this.saveBreeds.bind(this);
         this.clickOnBreed = this.clickOnBreed.bind(this);
@@ -60,7 +60,7 @@ export default class DogImage extends Component {
 
     changeTimeFormat() {
         if (this.state.timeFormat === "HH:mm") {
-            this.setState({ timeFormat: "HH:mm A"});    
+            this.setState({ timeFormat: "h:mm A"});    
         } else {
             this.setState({ timeFormat: "HH:mm"});
         }

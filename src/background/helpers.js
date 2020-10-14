@@ -13,9 +13,6 @@ async function getImages() {
 }
 
 async function getInitialImgaes() {
-    // chrome.storage.local.set({'savedBreeds': []}, function() {
-    //     console.log('Setting saveBreeds to: Empty');
-    // });
     let shouldGet = await checkDogImages();
     if (!shouldGet) {
         var first30 = await unsplashSearch("dog", 1, 30);

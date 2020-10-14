@@ -10,15 +10,61 @@ export default class DogImage extends Component {
     constructor() {
         super();
         this.state = { topSites: [],
+<<<<<<< Updated upstream
                        timeFormat: "hh:mm A"
                     };
+=======
+                    //    menuBreeds: [],
+                    //    chosenBreeds: [],
+                       timeFormat: "hh:mm A"
+                    };
+        // this.saveBreeds = this.saveBreeds.bind(this);
+        // this.clickOnBreed = this.clickOnBreed.bind(this);
+>>>>>>> Stashed changes
         this.changeTimeFormat = this.changeTimeFormat.bind(this)
     }
 
     async componentDidMount() {
         let sites = await getTopSites();
         this.setState({ topSites: sites});
+<<<<<<< Updated upstream
     }
+=======
+        // let savedBreeds = await getSavedBreeds();
+        // this.setState({ menuBreeds: savedBreeds});
+    }
+
+    // saveBreeds() {
+    //     console.log("Saving Breeds! .... ");
+
+    //     console.log(this.state.chosenBreeds.length);
+
+    //     if (this.state.chosenBreeds.length > 0) {
+    //         let breedsToSave = this.state.chosenBreeds;
+    //         chrome.storage.local.set({'savedBreeds': breedsToSave}, function() {
+    //             console.log('Setting saveBreeds to: ');
+    //             console.log(breedsToSave);
+    //         });
+    //     }
+    // }
+
+    // clickOnBreed(e) {
+    //     e.stopPropagation();
+    //     if (e.target.type === 'checkbox') {
+
+    //         console.log(e.target.value);
+    //         var currentBreeds = this.state.chosenBreeds;
+
+    //         if (currentBreeds.includes(e.target.value)){
+    //             currentBreeds.splice(currentBreeds.indexOf(e.target.value), 1);
+    //         } else {
+    //             currentBreeds.push(e.target.value);
+    //         }
+    //         this.setState({ chosenBreeds: currentBreeds});
+    //         console.log(this.state.chosenBreeds);
+    //     }
+    // }
+>>>>>>> Stashed changes
 
     changeTimeFormat() {
         if (this.state.timeFormat === "HH:mm") {
@@ -105,3 +151,29 @@ async function getTopSites() {
          });
     });
 }
+<<<<<<< Updated upstream
+=======
+
+// async function getSavedBreeds() {
+//     return new Promise(function(resolve, reject) {
+//         chrome.storage.local.get(['savedBreeds'], function(results) {
+//             console.log(results);
+//             var savedBreeds = [];
+
+//             breeds.forEach(function(name) {
+//                 var breed = new Object();
+//                 breed.name = name;
+//                 breed.isChecked = false;
+//                 if (results.savedBreeds.length > 0) {
+//                     if (results.savedBreeds.includes(breed.name)) {
+//                         breed.isChecked = true;
+//                     }
+//                 }
+//                 savedBreeds.push(breed);
+//             });
+
+//             resolve(savedBreeds);
+//         });
+//     });
+// }
+>>>>>>> Stashed changes

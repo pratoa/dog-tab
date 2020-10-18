@@ -62,6 +62,18 @@ async function checkDogImages() {
     return new Promise(function(resolve, reject) { 
             chrome.storage.local.get(["dogImages"], function(result) {
                 resolve(result.hasOwnProperty("dogImages"));
+            });
+    });
+}
+
+function saveTimeFormat(timeFormat) {
+    chrome.storage.local.set({'timeFormat': timeFormat}, function() { });  
+}
+
+async function getTimeFormat() {
+    return new Promise(function(resolve, reject) {
+        chrome.storage.local.get(["timeFormat"], function(result) {
+            resolve(result.timeFormat);
         });
     });
 }
@@ -74,4 +86,4 @@ class DogImage {
     }
 }
 
-export { getInitialImgaes, getImages }
+export { getInitialImgaes, getImages, saveTimeFormat, getTimeFormat }

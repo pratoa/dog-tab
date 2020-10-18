@@ -1,6 +1,7 @@
 /*global chrome*/
-import { getInitialImgaes } from "./helpers";
+import { getInitialImgaes, saveTimeFormat } from "./helpers";
 
 chrome.runtime.onInstalled.addListener(() => {
     getInitialImgaes();
+    saveTimeFormat("hh:mm A");
 });

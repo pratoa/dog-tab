@@ -19,7 +19,7 @@ Is a Chrome Extension that shows you majestic dogs every time you open a new tab
 
 ## Installation
 
-- Go to the [Chrome Store page]() and install the extension.
+- Go to the [Chrome Store page](https://chrome.google.com/webstore/detail/dogtab/fomheahpongcpgopbodhnglpokbokokp) and install the extension.
 - Refresh the chrome://extension page and the shortcut will become active!
 
 ## Why do I need this?

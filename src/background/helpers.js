@@ -5,10 +5,10 @@ const unsplash = new Unsplash({
     accessKey: "3Z5nmpj96SkBih-eqsEFI5Cl_L1kiwkZFF6FpPen37E"
 });
 
-async function getImages() {
-    var first30 = await unsplashSearch("dog", 1, 30);
+async function getImages(keyword) {
+    var first30 = await unsplashSearch(keyword, 1, 30);
     console.log(first30);
-    var second30 = await unsplashSearch("dog", 2, 30);
+    var second30 = await unsplashSearch(keyword, 2, 30);
     saveImages(first30.concat(second30));
 }
 
@@ -17,7 +17,7 @@ async function getInitialImgaes() {
     if (!shouldGet) {
         var first30 = await unsplashSearch("dog", 1, 30);
         console.log(first30);
-        var second30 = await unsplashSearch("dog", 2, 30);
+        var second30 = await unsplashSearch("cat", 1, 30);
         saveImages(first30.concat(second30));
     }
 }
@@ -40,7 +40,7 @@ async function unsplashSearch(keyword, page, perPage) {
 function saveImages(images) {
     var imagesToStore = [];
     images.forEach(function (image) {
-        var img = new DogImage(image.urls.regular, image.user.name, image.user.links.html)
+        var img = new PetImage(image.urls.regular, image.user.name, image.user.links.html)
         imagesToStore.push(img);
     });
 
@@ -78,7 +78,7 @@ async function getTimeFormat() {
     });
 }
 
-class DogImage {
+class PetImage {
     constructor(url, userName, userUrl) {
         this.url = url;
         this.userName = userName;

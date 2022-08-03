@@ -59,7 +59,7 @@ function saveImages(images) {
 }
 
 async function checkDogImages() {
-    return new Promise(function(resolve, reject) { 
+    return new Promise((resolve) => { 
             chrome.storage.local.get(["dogImages"], function(result) {
                 resolve(result.hasOwnProperty("dogImages"));
             });
@@ -71,7 +71,7 @@ function saveTimeFormat(timeFormat) {
 }
 
 async function getTimeFormat() {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve) => {
         chrome.storage.local.get(["timeFormat"], function(result) {
             resolve(result.timeFormat);
         });

@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import Clock from 'react-live-clock'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCog, faDog, faEye } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faEye } from '@fortawesome/free-solid-svg-icons'
 import './Menu.css'
 import { getTimeFormat, saveTimeFormat } from './background/helpers'
 
@@ -79,8 +79,8 @@ export default class DogImage extends Component {
 }
 
 async function getTopSites() {
-    return new Promise(function(resolve, reject) {
-        chrome.topSites.get(function(result) {
+    return new Promise((resolve) => {
+        chrome.topSites.get((result) => {
             var urls = [];
             result.forEach(function (url) {
                 url.baseUrl = url.url.match(/^https?:\/\/[^#?\/]+/)[0];

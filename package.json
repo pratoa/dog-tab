@@ -15,7 +15,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-live-clock": "^4.0.5",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "unsplash-js": "^6.0.0"
   },
   "scripts": {
